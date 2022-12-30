@@ -20,8 +20,9 @@ fun main() {
     println(strLength(neverNull)) //Ao passar uma variável não nula dá certo
     // strLength(anulavel) //-> Ao tentar passar uma variável que pode ser nula, um erro de compilação é produzido
 
-    println(describeString(neverNull))
-    println(describeString(anulavel))
+    println(describeString("Oi"))
+    println(describeString(""))
+    println(describeString(null))
 
 }
 
@@ -36,6 +37,6 @@ fun strLength(notNull: String): Int {
  ***/
 
 fun describeString(maybeString: String?): String {
-    if (maybeString != null && maybeString.length > 0) return "$maybeString"
+    if (maybeString != null && maybeString.length > 0) return "$maybeString tamanho ${maybeString.length}"
     else return "Variável nula"
 }
