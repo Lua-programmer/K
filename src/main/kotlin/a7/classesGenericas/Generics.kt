@@ -18,7 +18,12 @@ class MutableStack<E>(vararg items: E){  //Define uma classe genérica onde o E 
     override fun toString() = "MutableStack = ${elements.joinToString()}"
 }
 
+fun <E> mutableStackOf(vararg elements: E) = MutableStack(*elements)
+
 fun main() {
+    val stack2 = mutableStackOf(1,3,5,7,9)
+    println(stack2)
+
     val stack = MutableStack(2,6,8,7,4)
 
     stack.push(9)
