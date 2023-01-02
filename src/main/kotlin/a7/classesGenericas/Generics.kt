@@ -1,0 +1,39 @@
+package a7.classesGenericas
+
+import java.util.*
+
+class MutableStack<E>(vararg items: E){  //Define uma classe genérica onde o E é um tipo genérico
+    private val elements = items.toMutableList()
+
+    fun push(element: E) = elements.add(element)
+
+    fun peek(): E = elements.last()
+
+    fun pop(): E = elements.removeAt(elements.size - 1)
+
+    fun isEmpty() = elements.isEmpty()
+
+    fun size() = elements.size
+
+    override fun toString() = "MutableStack = ${elements.joinToString()}"
+}
+
+fun main() {
+    val stack = MutableStack(2,6,8,7,4)
+
+    stack.push(9)
+    println(stack)
+
+    println("peek(): ${stack.peek()}")
+    println(stack)
+
+    println("pop(): ${stack.pop()}")
+    println(stack)
+
+    for (i in 1..stack.size()){
+        println("pop(): ${stack.pop()}")
+        println(stack)
+    }
+
+    println(stack.isEmpty())
+}
