@@ -28,6 +28,16 @@ val positivesAll = numbers.all { it > 0}
 
 val maior70 = numbers.none{it > 70}
 
+//find e findLast -> find e findLast as funções retornam o primeiro ou o último elemento da coleção que corresponde ao
+// predicado fornecido. Se não houver tais elementos, as funções retornarão null.
+
+val words = listOf("Lets", "find", "something", "in", "collection", "somehow")
+
+val first = words.find { it.startsWith("some") }
+val last = words.findLast { it.startsWith("some") }
+
+val nothing = words.find { it.contains("nothing") }
+
 fun main() {
     println(positives)
     println(negatives)
@@ -38,4 +48,7 @@ fun main() {
     println(anyGT6)
     println(positivesAll)
     println(maior70)
+    println(first)
+    println(last)
+    println(nothing)
 }
