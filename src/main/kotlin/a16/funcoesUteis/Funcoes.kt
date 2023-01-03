@@ -24,7 +24,9 @@ val anyGT6 = numbers.any { it > 22 }
 
 val positivesAll = numbers.all { it > 0}
 
+//none -> A função none retorna true se não houver elementos que correspondam ao predicado fornecido na coleção.
 
+val maior70 = numbers.none{it > 70}
 
 fun main() {
     println(positives)
@@ -35,4 +37,5 @@ fun main() {
     println(anyNegative)
     println(anyGT6)
     println(positivesAll)
+    println(maior70)
 }
