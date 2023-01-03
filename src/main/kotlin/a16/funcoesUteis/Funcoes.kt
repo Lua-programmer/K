@@ -38,6 +38,16 @@ val last = words.findLast { it.startsWith("some") }
 
 val nothing = words.find { it.contains("nothing") }
 
+//flatMaptransforma cada elemento de uma coleção em um objeto iterável e cria uma única lista dos resultados da
+// transformação. A transformação é definida pelo usuário.
+
+val fruitsBag = listOf("apple","orange","banana","grapes")
+val clothesBag = listOf("shirts","pants","jeans")
+val cart = listOf(fruitsBag, clothesBag)
+val mapBag = cart.map { it }  //vai trazer as duas estruturas de listas separadas
+val flatMapBag = cart.flatMap { it } //vai juntar todas as listas em uma lista única
+
+
 fun main() {
     println(positives)
     println(negatives)
@@ -51,4 +61,6 @@ fun main() {
     println(first)
     println(last)
     println(nothing)
+    println(mapBag)
+    println(flatMapBag)
 }
