@@ -14,11 +14,17 @@ val doubled = numbers.map { x -> x * 2 }
 
 val tripled = numbers.map { it * 3 }
 
-//any -> A função anyretorna truese a coleção contiver pelo menos um elemento que corresponda ao predicado fornecido.
+//any -> A função any retorna truese a coleção contiver pelo menos um elemento que corresponda ao predicado fornecido.
 
 val anyNegative = numbers.any { it < 0 }
 
 val anyGT6 = numbers.any { it > 22 }
+
+//all -> A função all retorna true se todos os elementos na coleção corresponderem ao predicado fornecido.
+
+val positivesAll = numbers.all { it > 0}
+
+
 
 fun main() {
     println(positives)
@@ -28,4 +34,5 @@ fun main() {
     println(tripled)
     println(anyNegative)
     println(anyGT6)
+    println(positivesAll)
 }
